@@ -433,19 +433,26 @@
     <!-- 版本检测脚本 -->
     <script src="js/version-check.js"></script>
     <!-- 禁止F12 -->
-    <script>
-document.onkeydown=function(){
-    var e = window.event||arguments[0];
-    if(e.keyCode==123){
-            return false;
-    }else if((e.ctrlKey)&&(e.shiftKey)&&(e.keyCode==73)){
-            return false;
-    }else if((e.ctrlKey)&&(e.keyCode==85)){
-            return false;
-    }else if((e.ctrlKey)&&(e.keyCode==83)){
-            return false;
-    }
-}
+    <script type="text/javascript">
+	// 禁用右键菜单
+	document.addEventListener('contextmenu', (e) => {
+	    e.preventDefault();
+	});
+	
+	// 检测是否按下了 F12 或 Ctrl+Shift+I
+	document.addEventListener('keydown', (e) => {
+	    if (
+	        (e.key === 'F12' || 
+	         (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+	         (e.ctrlKey && e.shiftKey && e.key === 'C') || 
+	         (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+	         (e.ctrlKey && e.shiftKey && e.key === 'K'))
+	    ) {
+	        e.preventDefault();
+	        console.log('禁止打开开发者工具！');
+	        // 可以在这里执行其他操作
+	    }
+	});
 </script>
     <!-- 添加弹窗和URL搜索参数处理脚本 -->
     <script src="js/index-page.js"></script>
