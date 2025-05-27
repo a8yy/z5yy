@@ -109,6 +109,14 @@ const API_SITES = {
         api: 'https://ikunzyapi.com/api.php/provide/vod',
         name: 'iKun资源'
     },
+        jmzy: {
+        api: 'https://api.jmzy.com/api.php/provide/vod/',
+        name: '金马资源'
+    },
+        yzzy: {
+        api: 'https://api.yzzy-api.com/inc/api_mac10.php',
+        name: '优质资源'
+    },
     testSource: {
         api: 'https://www.example.com/api.php/provide/vod',
         name: '空内容测试源',
