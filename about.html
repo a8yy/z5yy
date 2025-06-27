@@ -45,25 +45,5 @@
 		</footer>
 	</div>
 </body>
-<script type="text/javascript">
-	// 禁用右键菜单
-	document.addEventListener('contextmenu', (e) => {
-	    e.preventDefault();
-	});
-	
-	// 检测是否按下了 F12 或 Ctrl+Shift+I
-	document.addEventListener('keydown', (e) => {
-	    if (
-	        (e.key === 'F12' || 
-	         (e.ctrlKey && e.shiftKey && e.key === 'I') || 
-	         (e.ctrlKey && e.shiftKey && e.key === 'C') || 
-	         (e.ctrlKey && e.shiftKey && e.key === 'J') || 
-	         (e.ctrlKey && e.shiftKey && e.key === 'K'))
-	    ) {
-	        e.preventDefault();
-	        console.log('禁止打开开发者工具！');
-	        // 可以在这里执行其他操作
-	    }
-	});
-</script>
+
 </html>
