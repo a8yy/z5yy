@@ -37,8 +37,8 @@ async function checkForUpdates() {
         // 获取最新版本
         let latestVersion;
         const VERSION_URL = {
-            PROXY: 'https://raw.ihtw.moe/raw.githubusercontent.com/LibreSpark/LibreTV/main/VERSION.txt',
-            DIRECT: 'https://raw.githubusercontent.com/LibreSpark/LibreTV/main/VERSION.txt'
+            PROXY: '',
+            DIRECT: ''
         };
         const FETCH_TIMEOUT = 1500;
         
@@ -64,11 +64,11 @@ async function checkForUpdates() {
         }
         
         console.log('当前版本:', currentVersion);
-        console.log('最新版本:', latestVersion);
+        console.log('最新版本:', currentVersion);
         
         // 清理版本字符串（移除可能的空格或换行符）
         const cleanCurrentVersion = currentVersion.trim();
-        const cleanLatestVersion = latestVersion.trim();
+        const cleanLatestVersion = currentVersion.trim();
         
         // 返回版本信息
         return {
@@ -148,7 +148,7 @@ function addVersionInfoToFooter() {
                 const updateBtn = versionElement.querySelector('span');
                 if (updateBtn) {
                     updateBtn.addEventListener('click', () => {
-                        window.open('https://github.com/LibreSpark/LibreTV', '_blank');
+                        window.open('', '_blank');
                     });
                 }
             }, 100);
